@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head> 
+        <link th:href="@{/form-stylesheet.css}" rel="stylesheet"> 
+    </head>    
+    <body>
+        <div class="topnav">
+            <a class="active">Form</a>
+            <a th:href="@{/inventory}">Inventory</a>
+        </div>
+        <div class="container">    
+            <h2>Cap'n Joseph's Ol' Thyme Country Superstore (Admin)</h2>
+            <p class="sub-text">Enter new inventory item ye g'dut!</p>
+            <div class="form-container">
+                <form method="post" th:object="${item}">
+                    <select class="select">
+                        <option style="color:blue" value="">Choose Category</option>
+                        <option th:each="category: ${categories}" th:text="${category}" th:value="${category}"></option>
+                    </select>
+                    <input type="text" placeholder="Name">
+                    <input class="half" type="text" placeholder="Price">
+                    <input class="half" type="text" placeholder="Discount">
+                    <h4>Order Date</h4>
+                    <input type="date" style="color:#3a3a3a">
+                    <input type="submit" value="Submit Item">
+                </form>
+            </div>
+        </div>      
+    </body>
+</html>
