@@ -62,6 +62,4 @@ public class Item {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    
 }
