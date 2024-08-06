@@ -15,16 +15,27 @@
                 <!--Retrieves item object and binds it to form-->
                 <form method="post" th:object="${item}" th:action="@{/submitItem}"> 
                     <select class="select" th:field="*{category}">
-                        <option style="color:blue" value="">Choose Category</option>
+                        <option value="">Choose Category</option>
                         <!-- Loops through Constants.java categories array -->
                         <option th:each="category: ${categories}" th:text="${category}"th:value="${category}"></option>
                     </select>
+                    <label>Name<label>
                     <input type="text" placeholder="Name" th:field="*{name}">
-                    <input class="half" type="text" placeholder="Price" th:field="*{price}">
-                    <input class="half" type="text" placeholder="Discount" th:field="*{discount}">
-                    <input class="half" type="number" placeholder="Qty" th:field="*{qty}">
-                    <h4>Order Date</h4>
+                        <div class="price-discount-container">
+                            <div>
+                                <label>Price<label>
+                                <input type="text" placeholder="Price" th:field="*{price}">
+                            </div>
+                            <div>
+                                <label>Discount<label>
+                                <input type="text" placeholder="Discount" th:field="*{discount}">
+                            </div>
+                        </div>
+                    <label>Quantity<label>
+                    <input type="number" placeholder="Qty" th:field="*{qty}">
+                    <label>Order Date<label>
                     <input type="date" style="color:#3a3a3a" th:field="*{date}">
+                    <input type="hidden" th:field="*{id}">
                     <input type="submit" value="Submit Item">
                 </form>
             </div>

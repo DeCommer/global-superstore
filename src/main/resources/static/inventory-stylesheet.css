@@ -46,8 +46,16 @@ table th {
 }
 table th, td {
   padding: 1rem;
+}
+
+tr {
   border-bottom: 1px solid #a1a1a1;
 }
+
+tr:last-child {
+  border: none;
+}
+
 table tbody {
 		 display: table-row-group;
 }
