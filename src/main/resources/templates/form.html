@@ -8,19 +8,23 @@
             <a th:href="@{/inventory}">Inventory</a>
         </div>
         <div class="container">    
-            <h2>Cap'n Joseph's Ol' Thyme Country Superstore (Admin)</h2>
+            <h1>Cap'n Joseph's</h1>
+            <h3>Ol' Thyme Country Superstore (Admin)</h3>
             <p class="sub-text">Enter new inventory item ye g'dut!</p>
             <div class="form-container">
-                <form method="post" th:object="${item}">
-                    <select class="select">
+                <!--Retrieves item object and binds it to form-->
+                <form method="post" th:object="${item}" th:action="@{/submitItem}"> 
+                    <select class="select" th:field="*{category}">
                         <option style="color:blue" value="">Choose Category</option>
-                        <option th:each="category: ${categories}" th:text="${category}" th:value="${category}"></option>
+                        <!-- Loops through Constants.java categories array -->
+                        <option th:each="category: ${categories}" th:text="${category}"th:value="${category}"></option>
                     </select>
-                    <input type="text" placeholder="Name">
-                    <input class="half" type="text" placeholder="Price">
-                    <input class="half" type="text" placeholder="Discount">
+                    <input type="text" placeholder="Name" th:field="*{name}">
+                    <input class="half" type="text" placeholder="Price" th:field="*{price}">
+                    <input class="half" type="text" placeholder="Discount" th:field="*{discount}">
+                    <input class="half" type="number" placeholder="Qty" th:field="*{qty}">
                     <h4>Order Date</h4>
-                    <input type="date" style="color:#3a3a3a">
+                    <input type="date" style="color:#3a3a3a" th:field="*{date}">
                     <input type="submit" value="Submit Item">
                 </form>
             </div>
