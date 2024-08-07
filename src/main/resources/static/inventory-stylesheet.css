@@ -3,7 +3,7 @@ body {
 }   
 .table-container {
   margin: 0 auto;
-  width: 75%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -36,15 +36,16 @@ table .head {
 }
 table .head th {
    font-size: 1rem;
-	 font-weight: normal;
+   font-weight: bold;
 	 text-align: center;
 	 color: #000;
 }
 
 table th {
-    display: table-cell;
+  display: table-cell;
 }
 table th, td {
+  text-align: center;
   padding: 1rem;
 }
 
@@ -61,14 +62,12 @@ table tbody {
 }
 
 table tbody td {
-    text-align: right;
-    text-align: center;
     font-size: 1rem;
 }
 
-table tbody td[type=currency], td[type=date] {
-     text-align: right;
-}
+/* table tbody td[type=currency], td[type=date] {
+
+} */
 
 table tbody td[type=currency]:before {
     content: "$";
@@ -81,7 +80,6 @@ table tbody td[type=currency]:before {
 .table-button {
     cursor: pointer;
     padding: 5px 10px;
-    float: left;
     color: #fff;
     background-color: #40528f;
     border-radius: 5px;
@@ -95,13 +93,19 @@ table tbody td[type=currency]:before {
   
   .alert {
     position: relative;
+    border-radius: 0 5px 5px 0;
     top: 2%;
-    padding: 30px;
+    width: fit-content;
+    padding: 10px;
     background-color: #f44336;
     color: white;
     opacity: 1;
     transition: opacity 0.6s;
-    margin-bottom: 15px;
+    margin: 5px 0;
   }
   
-  .alert.success {background-color: #04AA6D;}
+  .alert.success {background-color: #04aa15;}
+
+  .hidden {
+    display: none;
+  }

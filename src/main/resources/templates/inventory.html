@@ -2,11 +2,16 @@
     <head> 
         <link th:href="@{/inventory-stylesheet.css}" rel="stylesheet">
         <link th:href="@{/form-stylesheet.css}" rel="stylesheet">
+        <script th:src="@{/main.js}" defer></script>
     </head>    
     <body>
         <div class="topnav">
             <a  th:href="@{/}" >Form</a>
             <a class="active" th:href="@{/inventory}">Inventory</a>
+        </div>
+
+        <div class="alert success" th:if="${status} == 'success'">
+            <strong>You have successfully submitted your item</strong>
         </div>
    
         <div class="table-container">
@@ -21,6 +26,7 @@
                  <th>Total</th>
                  <th>Order Date</th>
                  <th>Update</th>
+                 <th>Delete</th>
               </tr>
               <tr th:each="item: ${items}">
                  <td th:text="${item.category}"></th>
@@ -33,6 +39,8 @@
                  <td>
                     <a th:href="@{/(id = ${item.id})}" role="button" class="table-button">Update</a>
                  </td>
+                <td>                    
+                </td>
               </tr>
            </table>
         </div>

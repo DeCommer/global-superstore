@@ -59,12 +59,13 @@
    }
   
    input[type=submit] {
-    background: #53c553;
+    background: #405d8f;
+    color: #fff;
     font-size: 1rem;
    }
 
    input[type=submit]:hover {
-    background-color: #75e275; 
+    background-color: #5f8cc4; 
     transition: 0.3s;
     cursor: pointer;
    }
@@ -115,5 +116,3 @@
     .topnav a.active {
       color: #1c5ffb;
     }
-    
-    
